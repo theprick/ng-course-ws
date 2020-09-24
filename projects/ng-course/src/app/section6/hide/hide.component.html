@@ -1,0 +1,17 @@
+<p>
+  Example of how to hide an element using the <strong>hidden</strong> and
+  <strong>innerHtml</strong> dom attributes. Use inspect tool from the javascript console to
+  check if the attribute is set based on the <b>showDiv</b> property from the typescript class.
+</p>
+<button (click)="toggleDiv()" [innerHtml]="btnLabel"></button>
+<div [hidden]="!showDiv">
+  Bla bla
+</div>
+<hr/>
+<code ngNonBindable>
+  <b>The code:</b><br />
+  &lt;button (click)="toggleDiv()" [innerHtml]="btnLabel">&lt;/button&gt;<br />
+  &lt;div [hidden]="!showDiv"&gt;<br />
+  &nbsp; Bla bla ...<br />
+  &lt;/div&gt;<br />
+</code>

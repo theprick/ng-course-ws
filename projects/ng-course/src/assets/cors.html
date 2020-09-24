@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <p>
+    The posts and followers is read from
+    <a href="http://jsonplaceholder.typicode.com/posts" target="_blank">here</a> and
+    <a href="https://api.github.com/users/chybie/followers" target="_blank">here</a> throught REST calls.
+    In order to solve <a href="https://web.dev/cross-origin-resource-sharing/" target="_blank">CORS error</a> (<strong>C</strong>ross-<strong>O</strong>rigin <strong>R</strong>esources <strong>S</strong>afely) : <br />
+    <span style="color: red; font-weight: bold">"No Access-Control-Allow-Origin header is present on the requested resource"</span>
+    the app calls another REST web service that makes the actual call to get the posts and the followers.
+    Besides the retrieval of the data it adds the HTTP response header <strong>Access-Control-Allow-Origin: *</strong><br/>.
+  </p>
+  <p><img src="CORS.png" /></p>
+</body>
+</html>

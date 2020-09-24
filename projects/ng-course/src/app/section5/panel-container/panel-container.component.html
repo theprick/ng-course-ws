@@ -1,0 +1,73 @@
+<h4>PANEL COMPONENT 1</h4>
+<app-panel>
+  <div class="heading">
+    Heading: example using <strong>ng-content</strong>
+  </div>
+  <div class="body">
+    <h2>Body</h2>
+    <code ngNonBindable>
+      <b>Panel component's template:</b><br />
+      &lt;div class="panel panel-default"&gt;<br />
+      &nbsp;&lt;div class="panel-heading"&gt;<br />
+      &nbsp;&nbsp;&lt;ng-content select=".heading"&gt;&lt;/ng-content&gt;<br />
+      &nbsp;&lt;/div&gt;<br />
+      &nbsp;&lt;div class="panel-body"&gt;<br />
+      &nbsp;&nbsp;&lt;ng-content select=".body"&gt;&lt;/ng-content&gt;<br />
+      &nbsp;&lt;/div&gt;<br />
+      &nbsp;&lt;div class="panel-footer" style="color: red;font-weight: bold"&gt;<br />
+      &nbsp;&nbsp;&lt;ng-content select="[id=footer]">&lt;/ng-content&gt;<br />
+      &nbsp;&lt;/div&gt;<br />
+      &lt;/div&gt;<br />
+    </code>
+
+    <code ngNonBindable>
+      <b>Panel component usage:<br /></b>
+      &lt;app-panel2&gt;<br />
+      &nbsp;&lt;div class="heading"&gt;Heading&lt;/div&gt;<br />
+      &nbsp;&lt;div class="body"&gt;Body&lt;/div&gt;<br />
+      &nbsp;&lt;div id="footer"&gt;Footer&lt;/div&gt;<br />
+      &lt;app-panel2/&gt;<br />
+    </code>
+
+  </div>
+  <div id="footer">
+    <p>Footer</p>
+  </div>
+</app-panel>
+
+<hr/>
+
+<h4>PANEL COMPONENT 2</h4>
+
+<app-panel2>
+  <ng-container class="heading">
+    Heading: example using <strong>ng-content</strong> and <strong>ng-container</strong> instead of divs
+  </ng-container>
+  <ng-container class="body">
+    <h2>Body</h2>
+    <code ngNonBindable>
+      <b>Panel component's template:</b><br />
+      &lt;div class="panel panel-default"&gt;<br />
+      &nbsp;&lt;div class="panel-heading"&lt;<br />
+      &nbsp;&nbsp;&lt;ng-content select=".heading"&gt;&lt;/ng-content&gt;<br />
+      &nbsp;&lt;/div&gt;<br />
+      &nbsp;&lt;div class="panel-body"&gt;<br />
+      &nbsp;&nbsp;&lt;ng-content select=".body"&gt;&lt;/ng-content&gt;<br />
+      &nbsp;&lt;/div&gt;<br />
+      &nbsp;&lt;div class="panel-footer" style="color: red;font-weight: bold"&gt;<br />
+      &nbsp;&nbsp;&lt;ng-content select="[id=footer]">&lt;/ng-content&gt;<br />
+      &nbsp;&lt;/div&gt;<br />
+      &lt;/div&gt;<br /><br />
+    </code>
+    <code ngNonBindable><b>Panel component usage:<br /></b>
+      &lt;app-panel2&gt;<br />
+      &nbsp;&lt;ng-container class="heading"&gt;Heading&lt;/ng-container&gt;<br />
+      &nbsp;&lt;ng-container class="body"&gt;Body&lt;/ng-container&gt;<br />
+      &nbsp;&lt;ng-container id="footer"&gt;Footer&lt;/ng-container&gt;<br />
+      &lt;app-panel2/&gt;<br />
+    </code>
+  </ng-container>
+  <ng-container id="footer">
+    <p>Footer</p>
+  </ng-container>
+</app-panel2>

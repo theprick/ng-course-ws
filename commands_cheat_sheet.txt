@@ -1,0 +1,4 @@
+tsc --target es5 main.ts
+node main.js
+ng g c <component name> 
+ng new <project name>

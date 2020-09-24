@@ -1,0 +1,17 @@
+<p>Example of using <strong>*ngFor</strong> directive embeded variables</p>
+<ul>
+  <li *ngFor="let course of listOfCourses; index as i; even as isEven; odd as isOdd">
+    <span [class.row-even]="isEven" [class.row-odd]="isOdd">{{ i }} - {{ course.name }}</span>
+  </li>
+</ul>
+
+<hr/>
+
+<code ngNonBindable>
+  <b>The code:</b><br />
+  &lt;ul&gt;<br />
+  &lt;li *ngFor="let course of listOfCourses; index as i; even as isEven; odd as isOdd"&gt;<br />
+  &nbsp; &lt;span [class.row-even]="isEven" [class.row-odd]="isOdd">&#123;&#123; i &#125;&#125; - &#123;&#123; course.name &#125;&#125;&lt;/span&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+</code>

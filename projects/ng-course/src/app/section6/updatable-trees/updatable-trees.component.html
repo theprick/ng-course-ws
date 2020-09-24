@@ -1,0 +1,7 @@
+<p><b>ngFor</b> directive example. The changes to the content of the array displayed <b>below, deletions, updates, insertions</b> are reflected automaticly in the view.</p>
+<button (click)="addTree()">Add</button>
+<ul>
+  <li *ngFor="let tree of trees">
+    {{tree.name}}<button (click)="removeTree(tree)">Remove</button><button (click)="updateTree(tree)">Update</button>
+  </li>
+</ul>

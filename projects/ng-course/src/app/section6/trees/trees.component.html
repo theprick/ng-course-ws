@@ -1,0 +1,22 @@
+<p>
+  Example of <strong>ngFor</strong> directive in conjunction with <strong>trackBy</strong>
+  Open the javascript console and inspect the button. Click the load button and noticed that the trees are loaded <b>only once</b> no matter how many times you press the button.
+  You can tell this because the &lt;li&gt; (list item) elements get purple bliking only once. This is very handy when we manipulate a lot of data.
+  This is because I use <code>*ngFor="let tree of trees; trackBy trackData"</code> where <strong>trackData</strong> is a function defined in my typescript class with the following implementation:<br/>
+</p>
+<div>
+  <div>
+    <code>
+      trackData(index, tree) &#123;<br />
+      &nbsp;return tree ? tree.id : undefined;<br />
+      &#125;<br />
+    </code>
+  </div>
+  <div>
+    <img src="../../../assets/trackby.png"/>
+  </div>
+</div>
+<button (click)="loadData()">Load</button>
+<ul>
+  <li *ngFor="let tree of trees; trackBy trackData">{{tree.name}}</li>
+</ul>

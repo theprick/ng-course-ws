@@ -1,0 +1,12 @@
+<div *ngFor="let follower of followers" class="row">
+    <div class="col-md-1">
+      <img [src]="follower.avatar_url" width="100" height="100"/>
+    </div>
+    <div class="col-md-1">
+      <a [routerLink]="['/section10/followers', follower.login, follower.id]"
+          [queryParams]="{view: 'summary'}">
+        <b>{{follower.login}}</b>
+      </a><br/>
+      <a [href]="follower.html_url" target="_blank">{{follower.html_url}}</a>
+    </div>
+</div>

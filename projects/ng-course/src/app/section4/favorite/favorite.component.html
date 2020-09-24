@@ -1,0 +1,70 @@
+<div>
+  <p>Assigment section 4. Implement favorite component using <strong>class binding</strong></p>
+  <code ngNonBindable>
+    <b>Snippet from typescript:</b><br />
+    @Component(&#123;<br />
+    &nbsp;selector: 'app-favorite',<br />
+    &nbsp;templateUrl: './favorite.component.html',<br />
+    &nbsp;styleUrls: ['./favorite.component.css'],<br />
+    &#125;)<br />
+    export class FavoriteComponent implements OnInit &#123;<br />
+    <br />
+    &nbsp;@Input('is-favorite') private isFavorite: boolean;<br />
+    &nbsp;@Output('change') statusChange = new EventEmitter();<br />
+    <br />
+    &nbsp;constructor() &#123; &#125;<br />
+    <br />
+    &nbsp;ngOnInit() &#123; &#125;<br />
+    <br />
+    &nbsp;toggleFavorite() &#123;<br />
+    &nbsp;this.isFavorite = !this.isFavorite;<br />
+    &nbsp;this.statusChange.emit(&#123; 'newValue': this.isFavorite &#125;);<br />
+    &#125;<br />
+    &#125;<br /><br />
+
+    export interface FavoriteChangedEvent &#123;<br />
+    &nbsp;newValue: boolean;<br />
+    &#125;
+  </code>
+  <p>
+    <code ngNonBindable>
+      <b>Snippet from template:</b><br/>
+      &lt;span class="glyphicon"
+      [class.glyphicon-star]="isFavorite"
+      [class.glyphicon-star-empty]="!isFavorite"
+      (click)="toggleFavorite()">&lt;/span&gt;
+    </code>
+  </p>
+  
+    <div class="boxed">
+      <span class="glyphicon"
+            [class.glyphicon-star]="isFavorite"
+            [class.glyphicon-star-empty]="!isFavorite"
+            (click)="toggleFavorite()"></span>
+    </div>
+  
+</div>
+<div>
+  <p>Assigment section 4. Implement favorite component using <strong>ngClass</strong> directive</p>
+  <p>
+    <code ngNonBindable>
+      <b>Snippet from template:</b><br />
+      &lt;span class="glyphicon"
+      [ngClass]="&#123;
+      'glyphicon-star': isFavorite,
+      'glyphicon-star-empty': !isFavorite
+      &#125;"
+      (click)="toggleFavorite()"&gt;&lt;/span&gt;
+    </code>
+  </p>
+  
+    <div class="boxed">
+      <span class="glyphicon"
+            [ngClass]="{
+          'glyphicon-star': isFavorite,
+          'glyphicon-star-empty': !isFavorite
+        }"
+        (click)="toggleFavorite()"></span>
+    </div>
+  
+</div>

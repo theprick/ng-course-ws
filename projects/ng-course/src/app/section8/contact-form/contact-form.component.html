@@ -1,0 +1,129 @@
+<p>
+  Using <strong>ngModel, ngForm, ngModelGroup </strong> to implement template driven forms with basic html5 validators.
+  Use <b>ngModelGroup</b> to group form controls in sections. Check the value object in console to see that it is hierarhical with contact object that has a firstName property.
+  By assigning the <b>ngModelGroup</b> to a teplate variable like this <br />
+  <code>
+    &lt;div ngModelGroup="contact" #contact="ngModelGroup"&gt;...&lt;/div&gt;<br />
+    &lt;div *ngIf="!contact.valid"&gt;...&lt;/div&gt;
+  </code><br/>
+  you can validate an entire group as a hole.
+  Notice that the submit button is disabled if the form is in an invalid state.
+</p>
+<p>
+  If you getthe following error <i style="color: red">There is no directive with "exportAs" set to "ngModel"</i> check the following
+  <a href="https://stackoverflow.com/questions/38648407/angular2-error-there-is-no-directive-with-exportas-set-to-ngform">link.</a>
+</p>
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div class="form-group">
+    <div ngModelGroup="contact" #contact="ngModelGroup">
+      <!-- Normally we should have more controls in this ngModelGroup -->
+      <label for="firstName">First Name</label>
+      <input id="firstName" required minlength="3" maxlength="10" pattern="banana"
+             ngModel name="firstName"
+             #firstName="ngModel" (change)="log(firstName)"
+             type="text" class="form-control" />
+      <div class="alert alert-danger"
+           *ngIf="firstName.touched && !firstName.valid">
+        <div *ngIf="firstName.touched && firstName.errors.required">
+          First Name is required
+        </div>
+        <div *ngIf="firstName.touched && firstName.errors.minlength">
+          First Name has to be at least {{firstName.errors.minlength.requiredLength}} chars long
+        </div>
+        <div *ngIf="firstName.touched && firstName.errors.pattern">
+          First Name has to match pattern {{firstName.errors.pattern.requiredPattern}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea name="comment" id="comment" required ngModel #comment="ngModel"
+              cols="30" rows="10" class="form-control"></textarea>
+    <div class="alert alert-danger"
+         *ngIf="comment.touched && !comment.valid">
+      <div *ngIf="comment.touched && comment.errors.required">Comment is required</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="contactMethod">Contact Method</label>
+    <select id="contactMethod" name="contactMethod" ngModel multiple>
+      <option></option>
+      <option *ngFor="let method of contactMethods" [ngValue]="method">{{method.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ngModel name="isSubscribed">Subscribe
+      </label>
+    </div>
+  </div>
+  <div *ngFor="let sex of sexes" class="radio">
+    <label>
+      <input type="radio" name="sex" [value]="sex.id" ngModel />
+      {{sex.name}}
+    </label>
+  </div>
+
+  <p>{{f.value | json}}</p>
+  <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
+
+<hr />
+<code ngNonBindable>
+  <b>Snipet:</b><br />
+  &lt;form #f="ngForm" (ngSubmit)="submit(f)"&gt;<br />
+  &nbsp;&nbsp;&lt;div class="form-group"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div ngModelGroup="contact"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="firstName"&gt;First Name&lt;/label&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id="firstName" required minlength="3" maxlength="10" pattern="banana"<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ngModel name="firstName"<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #firstName="ngModel" (change)="log(firstName)"<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type="text" class="form-control" /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="alert alert-danger"<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *ngIf="firstName.touched && !firstName.valid"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div *ngIf="firstName.touched && firstName.errors.required"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name is required<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div *ngIf="firstName.touched && firstName.errors.minlength"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name has to be at least &#123;&#123;firstName.errors.minlength.requiredLength&#125;&#125; chars long<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div *ngIf="firstName.touched && firstName.errors.pattern"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;First Name has to match pattern &#123;&#123;firstName.errors.pattern.requiredPattern&#125;&#125;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&lt;div class="form-group"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="comment"&gt;Comment&lt;/label&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea name="comment" id="comment" required ngModel #comment="ngModel"<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cols="30" rows="10" class="form-control"&gt;&lt;/textarea&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="alert alert-danger"<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *ngIf="comment.touched && !comment.valid"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div *ngIf="comment.touched && comment.errors.required"&gt;Comment is required&lt;/div&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&lt;div class="form-group"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;label for="contactMethod"&gt;Contact Method&lt;/label&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;select id="contactMethod" name="contactMethod" ngModel multiple&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&gt;&lt;/option&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option *ngFor="let method of contactMethods" [ngValue]="method"&gt;&#123;&#123;method.name&#125;&#125;&lt;/option&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;<br />
+  &nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&lt;div class="form-group"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="checkbox"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="checkbox" ngModel name="isSubscribed"&gt;Subscribe<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&lt;div *ngFor="let sex of sexes" class="radio"&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="radio" name="sex" [value]="sex.id" ngModel /&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#123;&#123;sex.name&#125;&#125;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&lt;/label&gt;<br />
+  &nbsp;&nbsp;&lt;/div&gt;<br />
+  &nbsp;&nbsp;&lt;button class="btn btn-primary" [disabled]="!f.valid"&gt;Submit&lt;/button&gt;<br />
+  &lt;/form&gt;<br />
+</code>

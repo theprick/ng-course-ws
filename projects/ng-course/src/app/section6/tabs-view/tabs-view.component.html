@@ -1,0 +1,28 @@
+<p>
+  Example of using the <strong>*ngSwitch</strong> directive. By clicking the two tabs
+  we switch the view mode from map to list.
+</p>
+<ul class="nav nav-pills">
+  <li class="hand" [class.active]="viewMode === 'map'"><a (click)="changeViewMode('map')">Map View</a></li>
+  <li class="hand" [class.active]="viewMode === 'list'"><a (click)="changeViewMode('list')">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div>
+
+<hr/>
+
+<code ngNonBindable>
+  <b>The code:</b><br />
+  &lt;ul class="nav nav-pills"&gt;<br/>
+  &nbsp;&nbsp; &lt;li class="hand" [class.active]="viewMode === 'map'"><a (click)="changeViewMode('map')" &gt;Map View&lt;/a&gt;&lt;/li&gt;<br />
+  &nbsp;&nbsp; &lt;li class="hand" [class.active]="viewMode === 'list'"><a (click)="changeViewMode('list')" &gt;List View&lt;/a&gt;&lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;div [ngSwitch]="viewMode"&gt;<br />
+  &nbsp;&nbsp; &lt;div *ngSwitchCase="'map'"&gt;Map View Content&lt;/div&gt;<br />
+  &nbsp;&nbsp; &lt;div *ngSwitchCase="'list'"&gt;List View Content&lt;/div&gt;<br />
+  &nbsp;&nbsp; &lt;div *ngSwitchDefault>Otherwise&lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+</code>

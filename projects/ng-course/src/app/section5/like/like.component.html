@@ -1,0 +1,8 @@
+<div class="boxed">
+  <p>{{content}}</p>
+  <span class="glyphicon glyphicon-heart likes"
+        [class.heart-fill]="isLiked"
+        [class.heart-empty]="!isLiked"
+        (click)="togglelike()"></span>&nbsp;
+  <span class="likes-count">{{likesCount}}</span>
+</div>

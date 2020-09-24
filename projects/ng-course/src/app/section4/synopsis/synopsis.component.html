@@ -1,0 +1,38 @@
+<h4>Angular built in pipes </h4>
+<p>Course info:</p>
+<div style="border:outset;width:460px">
+  <p><code ngNonBindable>Snippet: &#123;&#123; name | uppercase &#125;&#125;</code></p>
+  <p>Name:  {{ name | uppercase }}</p>
+
+  <p><code ngNonBindable>Snippet: &#123;&#123; price | currency : "EUR" : "symbol" : "3.2-2" &#125;&#125;</code></p>
+  <p>Price: {{ price | currency : "EUR" : "symbol" : "3.2-2" }}</p>
+
+  <p><code ngNonBindable>Snippet: &#123;&#123; rating | number : "1.2-3" &#125;&#125;</code></p>
+  <p>Rating: {{ rating | number : "1.2-3" }}</p>
+
+  <p><code ngNonBindable>Snippet: &#123;&#123; startDate | date : "dd-MM-yyyy" &#125;&#125;</code></p>
+  <p>Start date: {{ startDate | date : "dd-MM-yyyy"}}</p>
+
+  <p><code ngNonBindable>Snippet: &#123;&#123; numberOfStudents | number &#125;&#125;</code></p>
+  <p>Number of students: {{ numberOfStudents | number  }}</p>
+</div>
+<hr />
+<h4>Custom pipe </h4>
+<p><code ngNonBindable>Snippet: &#123;&#123; description2 | synopsis &#125;&#125;</code></p>
+<p>
+  Description2: {{ description2 | synopsis }}
+</p>
+<hr />
+<h4>Chaining multiple pipes: upper case and synopsis </h4>
+<p><code ngNonBindable>Snippet: &#123;&#123; description1 | synopsis : 13 : "___" | uppercase &#125;&#125;</code></p>
+<p>
+  Description1: {{ description1 | synopsis : 13 : "___" | uppercase }}
+</p>
+<hr/>
+<p><b>Usefull links</b></p>
+<ol>
+  <li><a href="https://angular.io/api/common/DatePipe">DatePIPE description</a></li>
+  <li><a href="https://angular.io/api/common/CurrencyPipe">CurrencyPIPE description</a></li>
+  <li><a href="https://angular.io/api/common/DecimalPipe">DecimalPIPE description</a></li>
+  <li><a href="https://www.lipsum.com/">Lorem Ipsum</a></li>
+</ol>

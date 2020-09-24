@@ -1,0 +1,18 @@
+<app-zippy title="ngFor directive example">
+  <p>I have embeded the updatable tree component inthe zippy component</p>
+  <app-updatable-trees></app-updatable-trees>
+</app-zippy>
+<app-zippy title="Example of a custom directive">
+  <code ng-non-bindable>
+    <b>Typescript:</b><br />
+    @Directive(&#123;<br />
+    &nbsp;&nbsp;selector: '[appInputFormat]'<br />
+    &#125;)<br />
+    export class InputFormatDirective &#123;<br />
+    &nbsp;&nbsp;...<br />
+    &#125;<br />
+    <b>HTML:</b><br />
+    &lt;input type="text" size="100" [appInputFormat]="'upper'" /&gt;
+  </code>
+  <input type="text" size="100" [appInputFormat]="'upper'" />
+</app-zippy>

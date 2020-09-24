@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0fa40ec4-5f99-4cea-b160-35decb0bbfa4}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="angular.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="projects\ng-course\src\app\home\home.component.css" />
+    <Content Include="projects\ng-course\src\app\home\home.component.html" />
+    <Content Include="projects\ng-course\src\app\section10\blog-container\blog-container.component.html" />
+    <Content Include="projects\ng-course\src\app\section10\blog-view\blog-view.component.html" />
+    <Content Include="projects\ng-course\src\app\section10\blog-archives\blog-archives.component.html" />
+    <Content Include="projects\ng-course\src\assets\cors.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="projects\ng-course\src\app\section4\authors\authors.component.css" />
+    <Content Include="projects\ng-course\src\app\section4\authors\authors.component.html" />
+    <Content Include="projects\ng-course\src\app\section4\favorite\favorite.component.css" />
+    <Content Include="projects\ng-course\src\app\section4\favorite\favorite.component.html" />
+    <Content Include="projects\ng-course\src\app\section4\README.md" />
+    <Content Include="projects\ng-course\src\app\section4\synopsis\synopsis.component.css" />
+    <Content Include="projects\ng-course\src\app\section4\synopsis\synopsis.component.html" />
+    <Content Include="projects\ng-course\src\app\section4\titlecase\titlecase.component.css" />
+    <Content Include="projects\ng-course\src\app\section4\titlecase\titlecase.component.html" />
+    <Content Include="projects\ng-course\src\app\section5\like-container\like-container.component.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="projects\ng-course\src\app\section5\likes-watcher\likes-watcher.component.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="projects\ng-course\src\app\section5\like\like.component.css" />
+    <Content Include="projects\ng-course\src\app\section5\like\like.component.html" />
+    <Content Include="projects\ng-course\src\app\section10\fol-container\fol-container.component.html" />
+    <Content Include="projects\ng-course\src\app\section10\followers\followers.component.css" />
+    <Content Include="projects\ng-course\src\app\section10\followers\followers.component.html" />
+    <Content Include="projects\ng-course\src\app\section10\github-profile\github-profile.component.css" />
+    <Content Include="projects\ng-course\src\app\section10\github-profile\github-profile.component.html" />
+    <Content Include="projects\ng-course\src\app\section10\navbar\navbar.component.css" />
+    <Content Include="projects\ng-course\src\app\section10\navbar\navbar.component.html" />
+    <Content Include="projects\ng-course\src\app\notfound\notfound.component.css" />
+    <Content Include="projects\ng-course\src\app\notfound\notfound.component.html" />
+    <Content Include="projects\ng-course\src\app\section10\posts\posts.component.css" />
+    <Content Include="projects\ng-course\src\app\section10\posts\posts.component.html" />
+    <Content Include="projects\ng-course\src\app\section5\panel-container\panel-container.component.html" />
+    <Content Include="projects\ng-course\src\app\section5\panel-container\panel-container.component.css" />
+    <Content Include="projects\ng-course\src\app\section5\panel2\panel2.component.css" />
+    <Content Include="projects\ng-course\src\app\section5\panel2\panel2.component.html" />
+    <Content Include="projects\ng-course\src\app\section5\panel\panel.component.css" />
+    <Content Include="projects\ng-course\src\app\section5\panel\panel.component.html" />
+    <Content Include="projects\ng-course\src\app\section6\courses-list\courses-list.component.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="projects\ng-course\src\app\section6\courses-table\courses-table.component.html" />
+    <Content Include="projects\ng-course\src\app\section6\courses-table\courses-table.component.css" />
+    <Content Include="projects\ng-course\src\app\section6\hide\hide.component.html" />
+    <Content Include="projects\ng-course\src\app\section6\tabs-view\tabs-view.component.html" />
+    <Content Include="projects\ng-course\src\app\section6\tabs-view\tabs-view.component.css" />
+    <Content Include="projects\ng-course\src\app\section6\trees\trees.component.css" />
+    <Content Include="projects\ng-course\src\app\section6\trees\trees.component.html" />
+    <Content Include="projects\ng-course\src\app\section6\updatable-trees\updatable-trees.component.css" />
+    <Content Include="projects\ng-course\src\app\section6\updatable-trees\updatable-trees.component.html" />
+    <Content Include="projects\ng-course\src\app\section6\zippy-container\zippy-continer.component.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="projects\ng-course\src\app\section6\zippy\zippy.component.css" />
+    <Content Include="projects\ng-course\src\app\section6\zippy\zippy.component.html" />
+    <Content Include="projects\ng-course\src\app\section8\change-passwd-form\change-passwd-form.component.css" />
+    <Content Include="projects\ng-course\src\app\section8\change-passwd-form\change-passwd-form.component.html" />
+    <Content Include="projects\ng-course\src\app\section8\contact-form\contact-form.component.css" />
+    <Content Include="projects\ng-course\src\app\section8\contact-form\contact-form.component.html" />
+    <Content Include="projects\ng-course\src\app\section8\course-form\course-form.component.css" />
+    <Content Include="projects\ng-course\src\app\section8\course-form\course-form.component.html" />
+    <Content Include="projects\ng-course\src\app\section8\login-form\login-form.component.css" />
+    <Content Include="projects\ng-course\src\app\section8\login-form\login-form.component.html" />
+    <Content Include="projects\ng-course\src\app\section8\new-course-form\new-course-form.component.css" />
+    <Content Include="projects\ng-course\src\app\section8\new-course-form\new-course-form.component.html" />
+    <Content Include="projects\ng-course\src\app\section8\signup-form\signup-form.component.css" />
+    <Content Include="projects\ng-course\src\app\section8\signup-form\signup-form.component.html" />
+    <Content Include="projects\ng-course\src\app\sidebar\sidebar.component.html" />
+    <Content Include="projects\ng-course\src\app\tutorial.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="tsconfig.json" />
+    <Content Include="tslint.json" />
+    <Content Include="README.md" />
+    <Content Include="projects\ng-course\tsconfig.app.json" />
+    <Content Include="projects\ng-course\tsconfig.spec.json" />
+    <Content Include="projects\ng-course\tslint.json" />
+    <Content Include="projects\ng-course\e2e\tsconfig.json" />
+    <Content Include="projects\ng-course\src\index.html" />
+    <Content Include="projects\ng-course\src\styles.css" />
+    <Content Include="projects\ng-course\src\favicon.ico" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\interceptor\mock.interceptor.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\services\mock.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\services\proxy\proxy.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\services\proxy\proxy.request.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\home\home.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\blog-container\blog-container.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\blog-view\blog-view.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\blog-archives\blog-archives.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\error-handling\error-handling-demo.component.html" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\error-handling\error-handling-demo.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\author.service.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\authors\authors.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\authors\authors.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\courses.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\courses.service.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\email.service.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\favorite-svg.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\favorite\favorite.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\favorite\favorite.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\synopsis\synopsis.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\synopsis\synopsis.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\synopsis\synopsis.pipe.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\textTransformer.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\titlecase\titlecase.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\titlecase\titlecase.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section4\titlecase\titlecase.pipe.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\like-container\like-container.component.css" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\like-container\like-container.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\likes-watcher\likes-watcher.component.html" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\likes-watcher\likes-watcher.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\like\like.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\like\like.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\handlers\error.handler.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\model\app.error.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\model\bad-request.error.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\model\follower.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\model\not-found.error.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\model\post.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\services\data.service.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\services\followers.service.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\common\services\post.service.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\fol-container\fol-container.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\followers\followers.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\followers\followers.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\github-profile\github-profile.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\github-profile\github-profile.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\navbar\navbar.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\navbar\navbar.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\notfound\notfound.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\notfound\notfound.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\posts\posts.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section10\posts\posts.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\panel-container\panel-container.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\panel2\panel2.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\panel2\panel2.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\panel\panel.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section5\panel\panel.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\courses-list\courses-list.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\courses-table\courses-table.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\hide\hide.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\input-format.directive.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\tabs-view\tabs-view.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\trees\trees.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\trees\trees.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\updatable-trees\updatable-trees.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\updatable-trees\updatable-trees.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\zippy-container\zippy-container.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\zippy\zippy.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section6\zippy\zippy.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\change-passwd-form\change-passwd-form.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\change-passwd-form\change-passwd-form.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\change-passwd-form\passwd.validators.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\contact-form\contact-form.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\course-form\course-form.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\login-form\login-form.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\login-form\login-form.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\login-form\login.validators.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\new-course-form\new-course-form.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\new-course-form\new-course-form.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\signup-form\signup-form.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\signup-form\signup-form.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\section8\signup-form\username.validators.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\sidebar.content.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="projects\ng-course\src\app\sidebar\sidebar.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\main.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\polyfills.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\test.ts" />
+    <TypeScriptCompile Include="projects\ng-course\e2e\src\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\e2e\src\app.po.ts" />
+    <Content Include="projects\ng-course\src\app\app.component.html" />
+    <Content Include="projects\ng-course\src\app\app.component.css" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\app.component.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\app\app.module.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="projects\ng-course\src\environments\environment.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ng-complete-course" />
+    <Folder Include="projects" />
+    <Folder Include="projects\ng-course" />
+    <Folder Include="projects\ng-course\e2e" />
+    <Folder Include="projects\ng-course\e2e\src" />
+    <Folder Include="projects\ng-course\src" />
+    <Folder Include="projects\ng-course\src\app" />
+    <Folder Include="projects\ng-course\src\app\common\services\proxy\" />
+    <Folder Include="projects\ng-course\src\app\home\" />
+    <Folder Include="projects\ng-course\src\app\common\" />
+    <Folder Include="projects\ng-course\src\app\section10\blog-container\" />
+    <Folder Include="projects\ng-course\src\app\section10\blog-archives\" />
+    <Folder Include="projects\ng-course\src\app\section10\blog-view\" />
+    <Folder Include="projects\ng-course\src\app\section10\error-handling\" />
+    <Folder Include="projects\ng-course\src\app\common\interceptor\" />
+    <Folder Include="projects\ng-course\src\app\section4\" />
+    <Folder Include="projects\ng-course\src\app\section4\authors\" />
+    <Folder Include="projects\ng-course\src\app\section4\favorite\" />
+    <Folder Include="projects\ng-course\src\app\section4\synopsis\" />
+    <Folder Include="projects\ng-course\src\app\section4\titlecase\" />
+    <Folder Include="projects\ng-course\src\app\section5" />
+    <Folder Include="projects\ng-course\src\app\section5\like\" />
+    <Folder Include="projects\ng-course\src\app\section5\like-container\" />
+    <Folder Include="projects\ng-course\src\app\section5\likes-watcher\" />
+    <Folder Include="projects\ng-course\src\app\section5\panel-container\" />
+    <Folder Include="projects\ng-course\src\app\section5\panel2\" />
+    <Folder Include="projects\ng-course\src\app\section5\panel\" />
+    <Folder Include="projects\ng-course\src\app\section6" />
+    <Folder Include="projects\ng-course\src\app\section10\" />
+    <Folder Include="projects\ng-course\src\app\common\handlers\" />
+    <Folder Include="projects\ng-course\src\app\common\model\" />
+    <Folder Include="projects\ng-course\src\app\common\services\" />
+    <Folder Include="projects\ng-course\src\app\section10\fol-container\" />
+    <Folder Include="projects\ng-course\src\app\section10\followers\" />
+    <Folder Include="projects\ng-course\src\app\section10\github-profile\" />
+    <Folder Include="projects\ng-course\src\app\section10\navbar\" />
+    <Folder Include="projects\ng-course\src\app\notfound\" />
+    <Folder Include="projects\ng-course\src\app\section10\posts\" />
+    <Folder Include="projects\ng-course\src\app\section6\courses-list\" />
+    <Folder Include="projects\ng-course\src\app\section6\hide\" />
+    <Folder Include="projects\ng-course\src\app\section6\courses-table\" />
+    <Folder Include="projects\ng-course\src\app\section6\tabs-view\" />
+    <Folder Include="projects\ng-course\src\app\section6\zippy-container\" />
+    <Folder Include="projects\ng-course\src\app\section6\trees\" />
+    <Folder Include="projects\ng-course\src\app\section6\updatable-trees\" />
+    <Folder Include="projects\ng-course\src\app\section6\zippy\" />
+    <Folder Include="projects\ng-course\src\app\section8\" />
+    <Folder Include="projects\ng-course\src\app\section8\change-passwd-form\" />
+    <Folder Include="projects\ng-course\src\app\section8\contact-form\" />
+    <Folder Include="projects\ng-course\src\app\section8\course-form\" />
+    <Folder Include="projects\ng-course\src\app\section8\login-form\" />
+    <Folder Include="projects\ng-course\src\app\section8\new-course-form\" />
+    <Folder Include="projects\ng-course\src\app\section8\signup-form\" />
+    <Folder Include="projects\ng-course\src\app\sidebar\" />
+    <Folder Include="projects\ng-course\src\assets" />
+    <Folder Include="projects\ng-course\src\environments" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="projects\ng-course\src\server.ts">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

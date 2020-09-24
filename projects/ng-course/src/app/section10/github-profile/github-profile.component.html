@@ -1,0 +1,57 @@
+<p>
+  This is the github-profile of follower <b>{{user}}</b> with id <b>{{followerId}}</b>.<br/>
+  Optional query param view = {{view}}.
+</p>
+<h4>routerLink example</h4>
+<p>
+  All the required and optional query parameters are Observables. First time this component
+  gets initialized the message <i>GithubProfileComponent -> ngOnInit</i> gets displayed in
+  the console.
+  If we press the buton bellow we will navigate to the same component but this time the
+  ngOnInit() will not be called but the parameter will be updated with the new value <i>1234</i>.
+</p>
+<p>
+  <button class="btn success"
+          [routerLink]="['/section10/followers', 'nextfollower', '1234']">
+    Next follower
+  </button>
+</p>
+<p>
+  <code ngNonBindable>
+    <b>The code:</b><br/>
+    &lt;button class="btn success"
+    [routerLink]="['/section10/followers', 'nextfollower', '1234']"&gt;
+    Next follower
+    &lt;/button&gt;
+  </code>
+</p>
+<h4>Router.navigate example</h4>
+<p>
+  If we press the button below we will navigate programatically to the followers page passing
+  the optional query parameters: <i>fromId</i> and <i>fromUser</i>.
+  Check the url after you have clicked.
+</p>
+<p>
+  <button class="btn success" (click)="back()">Back to List</button>
+</p>
+<p>
+  <code ngNonBindable>
+    <b>The code:</b><br />
+    &lt;button class="btn success" (click)="back()">Back to List&lt;/button&gt;<br />
+    <b>The code:</b><br />
+    ...<br />
+    constructor(<br />
+    &nbsp; private route: ActivatedRoute,<br />
+    &nbsp; private router: Router<br />
+    ) &#123; &#125;<br />
+    ...<br />
+    back() &#123;<br />
+    &nbsp; this.router.navigate(['/section10/followers'],  &#123;<br />
+    &nbsp; queryParams:  &#123;<br />
+    &nbsp;&nbsp;  fromId: this.followerId,<br />
+    &nbsp;&nbsp;  fromUser: this.user<br />
+    &nbsp; &#125;<br />
+    &nbsp; &#125;);<br />
+    &#125;<br />
+  </code>
+</p>

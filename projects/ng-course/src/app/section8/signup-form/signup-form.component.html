@@ -1,0 +1,85 @@
+<p>
+  Example of reactive forms with nested <b>FormGroups</b>. Here instead of html 5 validators in the template, I assign validators in the typescript class when I create the form control object.
+  I use a custom validator to verify that the username doesn't contains spaces and it is unique.
+  To check for uniqness I use an async validator that returns a Promise. The async behavioure is simulated by calling <code>setTimeout</code>.
+  Type <b>mosh</b> to get the error that the user already exists.
+</p>
+<div class="boxed">
+  <form [formGroup]="form">
+    <div formGroupName="account">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input formControlName="username"
+               id="username"
+               name="username"
+               type="text"
+               class="form-control" />
+        <div *ngIf="username.pending">Checking for uniqueness...</div>
+        <div class="alert alert-danger"
+             *ngIf="username.touched && username.errors && !username.valid">
+          <div *ngIf="username.errors?.required">
+            Username is required
+          </div>
+          <div *ngIf="username.errors?.minlength">
+            Username has to be at least {{username.errors.minlength.requiredLength}} chars long
+          </div>
+          <div *ngIf="username.errors?.noSpaces">
+            Username is not allowed to contain spaces
+          </div>
+          <div *ngIf="username.errors?.shouldBeUnique">
+            Username is not available
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input formControlName="password"
+               id="password"
+               type="text"
+               class="form-control">
+        <div class="alert alert-danger"
+             *ngIf="password.touched && password.errors && !password.valid">
+          <div *ngIf="password.errors?.required">
+            Password is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+  </form>
+</div>
+<hr/>
+<code ngNonBindable>
+  <b>Code from form component:</b><br />
+  form = new FormGroup(&#123;<br />
+  &nbsp;account: new FormGroup(&#123;<br />
+  &nbsp;&nbsp;username: new FormControl('', [<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;Validators.required,<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;Validators.minLength(3),<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;UserNameValidators.noSpaces,<br />
+  &nbsp;&nbsp;],<br />
+  &nbsp;&nbsp;[<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;UserNameValidators.shouldBeUnique,<br />
+  &nbsp;&nbsp;]),<br />
+  &nbsp;&nbsp;password: new FormControl('',<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;Validators.required<br />
+  &nbsp;&nbsp;)<br />
+  &#125;)<br />
+  &#125;);<br />
+</code>
+
+<code ngNonBindable>
+  <b>Code from form validator:</b><br />
+  static shouldBeUnique(control: AbstractControl): Promise&lt;ValidationErrors | null&gt;
+  &#123;<br />
+  return new Promise((resolve, reject)=&gt;
+  &#123;<br />
+  setTimeout(() =&gt; &#123;<br />
+  if (control.value === 'mosh')<br />
+  resolve(&#123; shouldBeUnique: true &#125;);<br />
+  else<br />
+  resolve(null);<br />
+  &#125;, 2000);<br />
+  &#125;);<br />
+  &#125;<br />
+</code>

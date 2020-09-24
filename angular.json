@@ -1,0 +1,120 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ng-course": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ng-course",
+      "sourceRoot": "projects/ng-course/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-course",
+            "index": "projects/ng-course/src/index.html",
+            "main": "projects/ng-course/src/main.ts",
+            "polyfills": "projects/ng-course/src/polyfills.ts",
+            "tsConfig": "projects/ng-course/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/ng-course/src/favicon.ico",
+              "projects/ng-course/src/assets"
+            ],
+            "styles": [
+              "projects/ng-course/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-course/src/environments/environment.ts",
+                  "with": "projects/ng-course/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-course:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-course:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-course:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-course/src/test.ts",
+            "polyfills": "projects/ng-course/src/polyfills.ts",
+            "tsConfig": "projects/ng-course/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-course/karma.conf.js",
+            "assets": [
+              "projects/ng-course/src/favicon.ico",
+              "projects/ng-course/src/assets"
+            ],
+            "styles": [
+              "projects/ng-course/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-course/tsconfig.app.json",
+              "projects/ng-course/tsconfig.spec.json",
+              "projects/ng-course/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng-course/e2e/protractor.conf.js",
+            "devServerTarget": "ng-course:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-course:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "ng-course"
+}

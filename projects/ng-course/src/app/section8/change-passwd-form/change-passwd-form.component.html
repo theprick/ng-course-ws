@@ -1,0 +1,26 @@
+<p>
+  Example of reactive form using custom validators
+</p>
+<form [formGroup]="form" #f="ngForm">
+  <label for="oldPasswd">Old Password (abcdefghij)</label>
+  <input formControlName="oldPasswd" class="form-control" type="password"/>
+  <div *ngIf="oldPasswd.touched && !oldPasswd.valid && oldPasswd.errors"
+       class="alert alert-danger">
+    <div *ngIf="oldPasswd.errors.required">Old password is required</div>
+    <div *ngIf="oldPasswd.errors.wrongPasswd">Wrong password</div>
+  </div>
+  <label for="newPasswd">New Password</label>
+  <input formControlName="newPasswd" class="form-control" type="password"/>
+  <div *ngIf="newPasswd.touched && newPasswd.errors"
+       class="alert alert-danger">
+    <div *ngIf="newPasswd.errors.required">New password is required</div>
+  </div>
+  <label for="confirmPasswd">Confirm Password</label>
+  <input formControlName="confirmPasswd" class="form-control" type="password"/>
+  <div *ngIf="confirmPasswd.touched && confirmPasswd.errors"
+       class="alert alert-danger">
+    <div *ngIf="confirmPasswd.errors.required">Re-type the new password here</div>
+    <div *ngIf="confirmPasswd.errors.mismatchedPasswd">Confirm password and new password doesn't match</div>
+  </div>
+  <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+</form>

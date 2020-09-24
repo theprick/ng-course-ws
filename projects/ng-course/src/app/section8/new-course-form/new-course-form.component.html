@@ -1,0 +1,22 @@
+<p>Example of using form arrays to build a reactive angular form. Type something in the <strong>Topics</strong> field and hit <strong>ENTER</strong> key to add a new topic. To delete it click on it. </p>
+<form class="form-group" [formGroup]="form">
+    <label for="name">Name</label>
+    <input formControlName="name" class="form-control"/>
+    <div formGroupName="contact">
+      <label for="telephone">Phone</label>
+      <input formControlName="telephone" class="form-control"/><br />
+      <label for="email">Email</label>
+      <input formControlName="email" class="form-control"/>
+    </div>
+    <label for="topics">Topics</label>
+    <input class="form-control" type="text" id="topics" name="topics"
+           (keyup.enter)="addTopic(topic)" #topic />
+    <ul class="list-group">
+      <li class="list-group-item"
+          *ngFor="let topic of topics"
+          (click)="deleteTopic(topic)">
+        {{topic.value}}
+      </li>
+    </ul>
+  <input type="button" value="Submit"/>
+</form>

@@ -1,0 +1,21 @@
+<div id="sidebar-wrapper">
+  <!-- Sidebar -->
+  <div *ngFor="let section of sections">
+    <div class="section section-heading"
+         [class.expanded]="isSectionExpanded(section.id)"
+         (click)="clickSection(section.id)">
+      <span class="glyphicon"
+            [ngClass]="{
+                    'glyphicon-chevron-down': isSectionExpanded(section.id),
+                    'glyphicon-chevron-right': !isSectionExpanded(section.id)
+            }"></span>
+      <span>{{section.displayTitle}}</span>
+    </div>
+    <div *ngIf="isSectionExpanded(section.id)">
+      <div *ngFor="let item of section.items"
+           class="section section-body">
+        <a class="section-body" [routerLink]="item.link">{{item.displayTitle}}</a>
+      </div>
+    </div>
+  </div>
+</div>

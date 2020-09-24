@@ -1,0 +1,18 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\projects",
+    "\\projects\\ng-course",
+    "\\projects\\ng-course\\src",
+    "\\projects\\ng-course\\src\\app",
+    "\\projects\\ng-course\\src\\app\\common",
+    "\\projects\\ng-course\\src\\app\\common\\services",
+    "\\projects\\ng-course\\src\\app\\common\\services\\proxy",
+    "\\projects\\ng-course\\src\\app\\home",
+    "\\projects\\ng-course\\src\\app\\section10",
+    "\\projects\\ng-course\\src\\app\\section11",
+    "\\projects\\ng-course\\src\\app\\section11\\admin"
+  ],
+  "SelectedNode": "\\projects\\ng-course\\src\\app\\common\\services\\post.service.ts",
+  "PreviewInSolutionExplorer": false
+}

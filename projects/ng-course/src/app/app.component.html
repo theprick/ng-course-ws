@@ -1,0 +1,15 @@
+<!-- Topbar -->
+<div id="header" [ngClass]="{ 'menu-displayed': sidebarDisplayed }">
+  <span (click)="clickToggleSidebarButton()">Sections</span>&nbsp;|&nbsp;
+  <span routerLink="home">Home</span>
+</div>
+<div>
+  <div id="wrapper" [ngClass]="{ 'menu-displayed': sidebarDisplayed }">
+    <div>
+      <app-sidebar [content]="sections" [hidden]="!sidebarDisplayed"></app-sidebar>
+      <div id="page-content-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

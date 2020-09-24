@@ -1,0 +1,29 @@
+<p>
+  In this example I demo the use of the <strong>angular templates</strong> and the <strong>*ngIf</strong> directive.
+  Click the <strong>+</strong> and <strong>-</strong> to increment the number of courses.
+  A specific template that shows the message "No courses yet" is used in case we don't have any course.
+  If we have courses a template that displays the message "Number of courses is ..." is used.
+</p>
+<button (click)="addCourse()">+</button>
+<button (click)="removeCourse()">-</button>
+<br />
+<div *ngIf="courses.length > 0; then coursesList else noCourses"></div>
+<ng-template #coursesList>
+  Number of courses is {{courses.length}}
+</ng-template>
+<ng-template #noCourses>
+  No courses yet
+</ng-template>
+
+<hr/>
+
+<code ngNonBindable>
+  <b>The code:</b><br/>
+  &lt;div *ngIf="courses.length > 0; then coursesList else noCourses"&gt;&lt;/div&gt;<br/>
+  &lt;ng-template #coursesList&gt;<br />
+  &nbsp; Number of courses is &#123;&#123;courses.length&#125;&#125;<br />
+  &lt;/ng-template&gt;<br />
+  &lt;ng-template #noCourses&gt;<br />
+  &nbsp; No courses yet<br />
+  &lt;/ng-template&gt;<br />
+</code>

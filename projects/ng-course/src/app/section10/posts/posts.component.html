@@ -1,0 +1,19 @@
+<input name="title" id="title" (keyup.enter)="addPost(titleInput)"
+        #titleInput class="form-control" required />
+<ul class="list-group">
+  <li class="list-group-item"
+      *ngFor="let post of posts">
+    <button (click)="deletePost(post.id)"
+            class="btn btn-danger btn-sm">
+      Delete
+    </button>&nbsp;
+    <input [(ngModel)]="post.title"
+            [hidden]="editingId===undefined || editingId!==post.id"
+            (keyup.enter)="updatePost($event, post)"
+            size="100" />
+    <span [hidden]="editingId!==undefined && editingId===post.id"
+          (click)="setEditablePost(post)">
+      {{post.title}}
+    </span>
+  </li>
+</ul>

@@ -1,0 +1,17 @@
+.likes {
+  cursor: pointer;
+  font-size: x-large;
+}
+
+.heart-fill {
+  color: deeppink;
+}
+
+.heart-empty {
+  color: lightgray;
+}
+
+.likes-count {
+  font-size: x-large;
+  font-weight: bold;
+}

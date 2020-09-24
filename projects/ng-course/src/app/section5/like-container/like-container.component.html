@@ -1,0 +1,10 @@
+<p>Assigment section 5, the like component that exposes the properties selected, likesCount, content and sends change events using <strong>@Input and @Output</strong> annotations.</p>
+
+<div *ngFor="let tweet of tweets">
+  <app-like [selected]="tweet.isLiked"
+            [likesCount]="tweet.likesCount"
+            [content]="tweet.body"
+            (change)="onLikeChanged($event)"></app-like>
+</div>
+<hr />
+<app-likes-watcher [notifications]="notifications"></app-likes-watcher>

@@ -1,0 +1,37 @@
+<p>
+  Using <strong>ngModel, ngForm, ngModelGroup </strong> to implement template driven forms with builtin validators<br />
+  If you getthe following error <i style="color: red">There is no directive with "exportAs" set to "ngModel"</i> check the following
+  <a href="https://stackoverflow.com/questions/38648407/angular2-error-there-is-no-directive-with-exportas-set-to-ngform">link.</a>
+</p>
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div class="form-group">
+    <label for="name">Course Name</label>
+    <input id="name" required minlength="5"
+           ngModel name="name"
+           #name="ngModel"
+           type="text" class="form-control" />
+    <div class="alert alert-danger"
+         *ngIf="name.touched && !name.valid">
+      <div *ngIf="name.errors.required">
+        Name is required
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Name has to be at least {{name.errors.minlength.requiredLength}} chars long
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select id="category" name="category" class="form-control" required
+            ngModel #category="ngModel">
+      <option></option>
+      <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="checkbox" name="hasGuarantee" ngModel/>
+    <label for="hasGuarantee">30-day money-back guarantee</label>
+  </div>
+    <p>{{f.value | json}}</p>
+    <button class="btn btn-primary" >Create</button>
+</form>
