@@ -13,16 +13,17 @@ export class DataService {
 
   private proxy: ProxyService;
 
-  constructor(        
-    private url: string,      
-    private http: HttpClient,    
+  constructor(
+    private url: string,
+    private http: HttpClient,
     private useProxy: boolean = true
   ) {
     this.proxy = new ProxyService(http);
   }
 
   getAll(): Observable<any> {
-    console.debug(this.url);
+    console.debug(`calling method getAll() with url ${this.url}`);
+    console.debug(`use proxy ${this.useProxy}`);
     return this.useProxy ? this.proxy.do(this.url) : this.http.get(this.url).pipe(
       map((response: Response) => response),
       catchError(this.handleError)
@@ -30,24 +31,30 @@ export class DataService {
   }
 
   create(resource: any): Observable<any> {
+    console.debug(`calling method create() with url ${this.url}`);
+    console.debug(`use proxy ${this.useProxy}`);
     return this.useProxy ? this.proxy.do(this.url, "POST", resource) : this.http.post(this.url, resource)
       .pipe(catchError(this.handleError));
   }
 
   delete(id: number): Observable<any> {
+    console.debug(`calling method delete() with url ${this.url}`);
+    console.debug(`use proxy ${this.useProxy}`);
     var deleteUrl = this.url + '/' + id;
     return this.useProxy ? this.proxy.do(deleteUrl, "DELETE") : this.http.delete(deleteUrl)
       .pipe(catchError(this.handleError));
   }
 
   update(id, resource: any): Observable<any> {
+    console.debug(`calling method update() with url ${this.url}`);
+    console.debug(`use proxy ${this.useProxy}`);
     var updateUrl = this.url + '/' + id;
     return this.useProxy ? this.proxy.do(updateUrl, "UPDATE", resource) : this.http.put(updateUrl, resource)
       .pipe(catchError(this.handleError));
   }
 
   handleError(error: Response) {
-    console.debug('Caught error: ', error);
+    console.debug('Caught unexpected error: ', error);
     if (error.status == 400) {
       return throwError(new BadInputError());
     } else if (error.status == 404) {

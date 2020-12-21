@@ -16,6 +16,7 @@ export class ProxyService {
   ) { }
 
   do(url: string, method: string = "GET", requestBody?: any, headers?: Map<string, string>): Observable<any>  {
+    console.debug(`calling proxy with the folloing params: ${url}, ${method}, ${requestBody}, ${headers}`);
     return this.http.put(this.proxyURL, new ProxyRequest(method, url, requestBody, headers))
       .pipe(catchError(this.handleError));
   }

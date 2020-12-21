@@ -27,6 +27,7 @@ export class PostsComponent implements OnInit {
   getPosts() {
     this.postService.getAll().subscribe(
       (response: any[]) => {
+        console.debug(`received response ${response}`)
         this.posts = response;
       }
     );
@@ -69,7 +70,7 @@ export class PostsComponent implements OnInit {
 
   updatePost($event, post: any) {
     // see https://blog.angular-university.io/angular-debugging/
-    // see https://medium.com/code-divoire/ng-bootstrap-modalservice-and-expressionchangedafterithasbeencheckederror-7b21cbf6c74a    
+    // see https://medium.com/code-divoire/ng-bootstrap-modalservice-and-expressionchangedafterithasbeencheckederror-7b21cbf6c74a
     ($event.srcElement as HTMLInputElement).blur();
     this.editingId = undefined;
     this.postService.update(post.id, post).subscribe(
