@@ -53,11 +53,8 @@ import { PostService } from './common/services/post.service';
 import { AppErrorHandler } from './common/handlers/error.handler';
 import { ErrorHandlingDemo } from './section10/error-handling/error-handling-demo.component';
 import { MockService } from './common/services/mock.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DemoNgMaterialComponent } from './section15/demo-ng-material/demo-ng-material.component';
-import { DemoNgCheckboxComponent } from './section15/demo-ng-checkbox/demo-ng-checkbox.component';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { DemoNgRadiobuttonComponent } from './section15/demo-ng-radiobutton/demo-ng-radiobutton.component';
+import { DemoNgMaterialModule } from "./section15/demo-ng-material/demo-ng-material.module";
+
 
 @NgModule({
   declarations: [
@@ -109,17 +106,14 @@ import { DemoNgRadiobuttonComponent } from './section15/demo-ng-radiobutton/demo
     BlogArchiveViewComponent,
     ErrorHandlingDemo,
     // section 15
-    DemoNgMaterialComponent,
-    DemoNgCheckboxComponent,
-    DemoNgRadiobuttonComponent
+
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatCheckboxModule,
+    DemoNgMaterialModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -266,15 +260,6 @@ import { DemoNgRadiobuttonComponent } from './section15/demo-ng-radiobutton/demo
           {
             path: 'errors',
             component: ErrorHandlingDemo
-          }
-        ]
-      },
-      {
-        path: 'section15',
-        children: [
-          {
-            path: 'ngcheckbox',
-            component: DemoNgCheckboxComponent
           }
         ]
       },

@@ -149,7 +149,56 @@ export const sections = [
       {
         displayTitle: 'Checkbox',
         link: 'section15/ngcheckbox'
-      }
+      },
+      {
+        displayTitle: 'Radiobutton',
+        link: 'section15/ngradiobutton'
+      },
+      {
+        displayTitle: 'Selects',
+        link: 'section15/ngselects'
+      },
+      {
+        displayTitle: 'Inputs',
+        link: 'section15/nginputs'
+      },
+      {
+        displayTitle: 'Textarea',
+        link: 'section15/ngtextarea'
+      },
+      {
+        displayTitle: 'Date pickers',
+        link: 'section15/ngdatepicker'
+      },
+      {
+        displayTitle: 'Icons',
+        link: 'section15/ngicons'
+      },
+      {
+        displayTitle: 'Buttons',
+        link: 'section15/ngbuttons'
+      },
+      {
+        displayTitle: 'Chips',
+        link: 'section15/ngchips'
+      },
+      {
+        displayTitle: 'Progress Spinners',
+        link: 'section15/ngprogressspinners'
+      },
+      {
+        displayTitle: 'Tooltips',
+        link: 'section15/ngtooltips'
+      },
+      {
+        displayTitle: 'Tabs',
+        link: 'section15/ngtabs'
+      },
+      {
+        displayTitle: 'Dialogs',
+        link: 'section15/ngdialogs'
+      },
+
     ]
   }
 

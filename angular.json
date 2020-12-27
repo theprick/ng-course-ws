@@ -117,6 +117,119 @@
           }
         }
       }
+    },
+    "ng-material-demo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ng-material-demo",
+      "sourceRoot": "projects/ng-material-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-material-demo",
+            "index": "projects/ng-material-demo/src/index.html",
+            "main": "projects/ng-material-demo/src/main.ts",
+            "polyfills": "projects/ng-material-demo/src/polyfills.ts",
+            "tsConfig": "projects/ng-material-demo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/ng-material-demo/src/favicon.ico",
+              "projects/ng-material-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ng-material-demo/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-material-demo/src/environments/environment.ts",
+                  "with": "projects/ng-material-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-material-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-material-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-material-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-material-demo/src/test.ts",
+            "polyfills": "projects/ng-material-demo/src/polyfills.ts",
+            "tsConfig": "projects/ng-material-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-material-demo/karma.conf.js",
+            "assets": [
+              "projects/ng-material-demo/src/favicon.ico",
+              "projects/ng-material-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ng-material-demo/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-material-demo/tsconfig.app.json",
+              "projects/ng-material-demo/tsconfig.spec.json",
+              "projects/ng-material-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng-material-demo/e2e/protractor.conf.js",
+            "devServerTarget": "ng-material-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-material-demo:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-course"
