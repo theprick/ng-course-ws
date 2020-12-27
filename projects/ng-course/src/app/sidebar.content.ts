@@ -132,7 +132,7 @@ export const sections = [
   },
   {
     id: 'section11',
-    displayTitle: 'Section 11 - Authentication and Authorization',
+    displayTitle: 'Section 11 - Authentication and Authorization - NOT COMPLETED',
     expanded: false,
     items: [
       {
@@ -140,5 +140,17 @@ export const sections = [
         link: 'jwt'
       }
     ]
+  },
+  {
+    id: 'section15',
+    displayTitle: 'Section 15 - Angular material',
+    expanded: false,
+    items: [
+      {
+        displayTitle: 'Checkbox',
+        link: 'section15/ngcheckbox'
+      }
+    ]
   }
+
 ]

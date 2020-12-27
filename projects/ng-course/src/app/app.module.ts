@@ -53,6 +53,11 @@ import { PostService } from './common/services/post.service';
 import { AppErrorHandler } from './common/handlers/error.handler';
 import { ErrorHandlingDemo } from './section10/error-handling/error-handling-demo.component';
 import { MockService } from './common/services/mock.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DemoNgMaterialComponent } from './section15/demo-ng-material/demo-ng-material.component';
+import { DemoNgCheckboxComponent } from './section15/demo-ng-checkbox/demo-ng-checkbox.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { DemoNgRadiobuttonComponent } from './section15/demo-ng-radiobutton/demo-ng-radiobutton.component';
 
 @NgModule({
   declarations: [
@@ -102,13 +107,19 @@ import { MockService } from './common/services/mock.service';
     BlogArchiveContainerComponent,
     BlogArchivesComponent,
     BlogArchiveViewComponent,
-    ErrorHandlingDemo    
+    ErrorHandlingDemo,
+    // section 15
+    DemoNgMaterialComponent,
+    DemoNgCheckboxComponent,
+    DemoNgRadiobuttonComponent
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -258,6 +269,15 @@ import { MockService } from './common/services/mock.service';
           }
         ]
       },
+      {
+        path: 'section15',
+        children: [
+          {
+            path: 'ngcheckbox',
+            component: DemoNgCheckboxComponent
+          }
+        ]
+      },
       //this should always be the last one
       {
         path: '**',
@@ -270,7 +290,7 @@ import { MockService } from './common/services/mock.service';
     TitleCasePipe,
     FollowersService,
     PostService,
-    // For creating a mock back-end. You don't need these in a real app.    
+    // For creating a mock back-end. You don't need these in a real app.
     MockService,
     {
       provide: ErrorHandler,

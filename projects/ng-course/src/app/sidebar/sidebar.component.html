@@ -14,7 +14,7 @@
     <div *ngIf="isSectionExpanded(section.id)">
       <div *ngFor="let item of section.items"
            class="section section-body">
-        <a class="section-body" [routerLink]="item.link">{{item.displayTitle}}</a>
+        <a class="section-body" [routerLink]="item.link" routerLinkActive="section-body-active">{{item.displayTitle}}</a>
       </div>
     </div>
   </div>

@@ -81,6 +81,15 @@
   background-color: #e8ebed;
 }
 
+.section-body-active {
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #8e626f;
+  background-color: #e8ebed;
+  font-weight: bold;
+}
+
   .section-body:hover {
     cursor: pointer;
   }
@@ -113,3 +122,6 @@ polygon:hover {
 .form-control.ng-invalid.ng-touched {
   border-color: red;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

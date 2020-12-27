@@ -4,7 +4,7 @@ export class AppErrorHandler implements ErrorHandler {
 
     handleError(error: any): void {
       console.debug(error);
-      alert('Unexpected error has occured');
+      alert('Unexpected error has occurred');
     }
 
 }
