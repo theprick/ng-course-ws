@@ -37,3 +37,36 @@ Error: ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after
 https://medium.com/angular-in-depth/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4
 
 ***********************************************************************************************************************
+
+Error: Uncaught (in promise): NullInjectorError: StaticInjectorError(AppModule)[DemoNgDialogsComponent -> CourseDetailsComponent]:
+  StaticInjectorError(Platform: core)[DemoNgDialogsComponent -> CourseDetailsComponent]:
+    NullInjectorError: No provider for CourseDetailsComponent!
+
+Declare in module.ts :
+
+***********************************************************************************************************************
+
+Layouts:
+https://material.io/design/layout/responsive-layout-grid.html#grid-customization
+https://material.io/design/layout/understanding-layout.html
+https://material.angular.io/cdk/layout/overview
+
+***********************************************************************************************************************
+
+Density-independent pixels (Pronunciation: "dips", Notation: "dp")
+Scalable pixels (Notation: sp): same function as the dips but for fonts
+
+***********************************************************************************************************************
+
+https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=689F38&secondary.color=1A237E&primary.text.color=1A237E&secondary.text.color=00ACC1
+
+***********************************************************************************************************************
+
+Convert an existing project to scss
+https://www.digitalocean.com/community/tutorials/using-sass-with-the-angular-cli
+
+***********************************************************************************************************************
+
+
+
+

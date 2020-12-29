@@ -4,22 +4,6 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
-import {
-  MatCheckboxModule,
-  MatRadioModule,
-  MatSelectModule,
-  MatInputModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
-  MatIconModule,
-  MatButtonModule,
-  MatChipsModule,
-  MatTabsModule,
-  MatProgressSpinnerModule,
-  MatTooltipModule,
-  MatDialogModule,
-} from '@angular/material';
-
 import { DemoNgRadioComponent } from './demo-ng-radio/demo-ng-radio.component';
 import { DemoNgCheckboxComponent } from './demo-ng-checkbox/demo-ng-checkbox.component';
 import { DemoNgSelectsComponent } from "./demo-ng-selects/demo-ng-selects.component";
@@ -28,6 +12,8 @@ import { DemoNgChipsComponent } from "./demo-ng-chips/demo-ng-chips.component";
 import { DemoNgProgresSpinnersComponent } from "./demo-ng-progresspinners/demo-ng-progresspinners.component";
 import { DemoNgTabsComponent } from "./demo-ng-tabs/demo-ng-tabs.component";
 import { DemoNgDialogsComponent } from "./demo-ng-dialogs/demo-ng-dialogs.component";
+import { CourseDetailsComponent } from './course-details/course-details.component';
+import { MatComponentsModule } from "./mat-components.module";
 
 @NgModule({
   declarations: [
@@ -39,6 +25,11 @@ import { DemoNgDialogsComponent } from "./demo-ng-dialogs/demo-ng-dialogs.compon
     DemoNgProgresSpinnersComponent,
     DemoNgTabsComponent,
     DemoNgDialogsComponent,
+    CourseDetailsComponent,
+  ],
+  //here I register all the components that are added dynamically(see section15/dialogs example)
+  entryComponents: [
+    CourseDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -46,19 +37,7 @@ import { DemoNgDialogsComponent } from "./demo-ng-dialogs/demo-ng-dialogs.compon
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MatCheckboxModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatIconModule,
-    MatButtonModule,
-    MatChipsModule,
-    MatProgressSpinnerModule,
-    MatDialogModule,
-    MatTabsModule,
-    MatTooltipModule,
+    MatComponentsModule,
     RouterModule.forChild([
         {
           path: 'section15',

@@ -25,7 +25,8 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "projects/ng-course/src/styles.css"
+              "projects/ng-course/src/styles.css",
+              "projects/ng-course/src/theme.scss"
             ],
             "scripts": []
           },
