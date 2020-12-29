@@ -20,7 +20,7 @@ import {
   MatDialogModule,
 } from '@angular/material';
 
-import { DemoNgRadiobuttonComponent } from './demo-ng-radiobutton/demo-ng-radiobutton.component';
+import { DemoNgRadioComponent } from './demo-ng-radio/demo-ng-radio.component';
 import { DemoNgCheckboxComponent } from './demo-ng-checkbox/demo-ng-checkbox.component';
 import { DemoNgSelectsComponent } from "./demo-ng-selects/demo-ng-selects.component";
 import { DemoNgInputsComponent } from "./demo-ng-inputs/demo-ng-inputs.component";
@@ -31,7 +31,7 @@ import { DemoNgDialogsComponent } from "./demo-ng-dialogs/demo-ng-dialogs.compon
 
 @NgModule({
   declarations: [
-    DemoNgRadiobuttonComponent,
+    DemoNgRadioComponent,
     DemoNgCheckboxComponent,
     DemoNgSelectsComponent,
     DemoNgInputsComponent,
@@ -68,8 +68,8 @@ import { DemoNgDialogsComponent } from "./demo-ng-dialogs/demo-ng-dialogs.compon
               component: DemoNgCheckboxComponent
             },
             {
-              path: 'ngradiobutton',
-              component: DemoNgRadiobuttonComponent
+              path: 'ngradio',
+              component: DemoNgRadioComponent
             },
             {
               path: 'ngselects',

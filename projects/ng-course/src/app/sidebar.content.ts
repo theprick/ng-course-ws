@@ -151,15 +151,15 @@ export const sections = [
         link: 'section15/ngcheckbox'
       },
       {
-        displayTitle: 'Radiobutton',
-        link: 'section15/ngradiobutton'
+        displayTitle: 'Radio',
+        link: 'section15/ngradio'
       },
       {
         displayTitle: 'Selects',
         link: 'section15/ngselects'
       },
       {
-        displayTitle: 'Inputs',
+        displayTitle: 'Inputs and Buttons',
         link: 'section15/nginputs'
       },
       {
