@@ -132,7 +132,7 @@ export const sections = [
   },
   {
     id: 'section11',
-    displayTitle: 'Section 11 - Authentication and Authorization - NOT COMPLETED',
+    displayTitle: 'Section 11 - Authentication and Authorization !NEEDS WORK!',
     expanded: false,
     items: [
       {
@@ -163,32 +163,12 @@ export const sections = [
         link: 'section15/nginputs'
       },
       {
-        displayTitle: 'Textarea',
-        link: 'section15/ngtextarea'
-      },
-      {
-        displayTitle: 'Date pickers',
-        link: 'section15/ngdatepicker'
-      },
-      {
-        displayTitle: 'Icons',
-        link: 'section15/ngicons'
-      },
-      {
-        displayTitle: 'Buttons',
-        link: 'section15/ngbuttons'
-      },
-      {
-        displayTitle: 'Chips',
+        displayTitle: 'Chips !NEEDS WORK!',
         link: 'section15/ngchips'
       },
       {
         displayTitle: 'Progress Spinners',
         link: 'section15/ngprogressspinners'
-      },
-      {
-        displayTitle: 'Tooltips',
-        link: 'section15/ngtooltips'
       },
       {
         displayTitle: 'Tabs',

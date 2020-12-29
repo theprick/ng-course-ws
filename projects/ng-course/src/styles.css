@@ -126,3 +126,8 @@ polygon:hover {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* add padding to the angular material tab's content*/
+mat-tab-body {
+  padding: 10px;
+}

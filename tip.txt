@@ -7,3 +7,33 @@ These are the 5 steps I perform when I got such an error.
     Restart the cli?
 
 https://stackoverflow.com/questions/44429996/angular-2-component-is-not-a-known-element
+
+***********************************************************************************************************************
+
+Run ng-material-demo like this:
+ng serve --open --project=ng-material-demo --baseHref /ng-material-demo/
+Port is 4222
+
+***********************************************************************************************************************
+
+Error: mat-form-field must contain a MatFormFieldControl
+This error occurs when you have not added a form field control to your form field. If your form field contains a
+native <input> or <textarea> element, make sure you've added the matInput directive to it and have imported MatInputModule.
+Other components that can act as a form field control include <mat-select>, <mat-chip-list>,
+and any custom form field controls you've created.
+
+***********************************************************************************************************************
+
+https://techoverflow.net/2018/02/07/how-to-fix-angular-cannot-find-control-with-unspecified-name-attribute/how to
+
+***********************************************************************************************************************
+
+https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+
+***********************************************************************************************************************
+
+Error: ExpressionChangedAfterItHasBeenCheckedError: Expression has changed after it was checked. Previous value:
+'mat-chip-selected: true'. Current value: 'mat-chip-selected: false'
+https://medium.com/angular-in-depth/everything-you-need-to-know-about-the-expressionchangedafterithasbeencheckederror-error-e3fd9ce7dbb4
+
+***********************************************************************************************************************

@@ -1,0 +1,63 @@
+<p>
+  <a href="https://material.angular.io/components/form-field/overview" target="_blank">Documentation</a>
+</p>
+<p>
+  <span matTooltip="Here is a tooltip"><mat-icon aria-hidden="false" aria-label="Home">home</mat-icon></span>
+</p>
+<p>
+  <mat-form-field appearance='fill'>
+    <mat-label>Course Name (Fill)</mat-label>
+    <input matInput type="text" [formControl]="courseNameFormControl" required/>
+    <mat-hint>Type here the course name</mat-hint>
+    <span matSuffix>@courses.univ</span>
+    <mat-error *ngIf="courseNameFormControl.invalid && courseNameFormControl.errors.required">
+      Course Name is required
+    </mat-error>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance='fill'>
+    <mat-label>Choose a date</mat-label>
+    <input type="text" matInput [matDatepicker]="startdate">
+    <mat-datepicker-toggle matSuffix [for]="startdate"></mat-datepicker-toggle>
+    <mat-datepicker #startdate></mat-datepicker>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill">
+    <mat-label>Course description (Fill)</mat-label>
+    <textarea matInput rows="3" cols="10"></textarea>
+    <mat-hint>Fill here the course description</mat-hint>
+  </mat-form-field >
+</p>
+<p>
+  <mat-form-field appearance='outline'>
+    <mat-label>First name (Outline)</mat-label>
+    <input matInput type="text" [formControl]="firstNameFormControl"/>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance='legacy'>
+    <mat-label>Last name (Legacy)</mat-label>
+    <input matInput type="text" [formControl]="lastNameFormControl"/>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance='standard'>
+    <mat-label>Address (Standard)</mat-label>
+    <input matInput type="text" [formControl]="addressFormControl"/>
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance='standard'>
+    <mat-label>Phone (Standard)</mat-label>
+    <span matPrefix>+32 &nbsp;</span>
+    <input matInput type="text" [formControl]="phoneFormControl"/>
+  </mat-form-field>
+</p>
+<p>
+  <button mat-button color="accent">Submit</button>
+  <button color="primary" mat-raised-button>Save draft</button>
+  <button mat-flat-button color="warn">Cancel</button>
+  <button mat-fab><mat-icon color="warn">alarm</mat-icon></button>
+</p>

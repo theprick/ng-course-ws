@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { sections } from '../sidebar.content';
 
 @Component({
   selector: 'app-sidebar',

@@ -173,7 +173,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-material-demo:build"
+            "browserTarget": "ng-material-demo:build",
+            "port": 4222
           },
           "configurations": {
             "production": {

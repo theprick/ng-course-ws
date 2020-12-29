@@ -1,20 +1,44 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { DemoNgRadiobuttonComponent } from './demo-ng-radiobutton/demo-ng-radiobutton.component';
-import { DemoNgCheckboxComponent } from './demo-ng-checkbox/demo-ng-checkbox.component';
-import {DemoNgSelectsComponent} from "./demo-ng-selects/demo-ng-selects.component";
 import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatCheckboxModule, MatRadioModule, MatSelectModule } from '@angular/material';
 import { RouterModule } from "@angular/router";
+import {
+  MatCheckboxModule,
+  MatRadioModule,
+  MatSelectModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatIconModule,
+  MatButtonModule,
+  MatChipsModule,
+  MatTabsModule,
+  MatProgressSpinnerModule,
+  MatTooltipModule,
+  MatDialogModule,
+} from '@angular/material';
+
+import { DemoNgRadiobuttonComponent } from './demo-ng-radiobutton/demo-ng-radiobutton.component';
+import { DemoNgCheckboxComponent } from './demo-ng-checkbox/demo-ng-checkbox.component';
+import { DemoNgSelectsComponent } from "./demo-ng-selects/demo-ng-selects.component";
+import { DemoNgInputsComponent } from "./demo-ng-inputs/demo-ng-inputs.component";
+import { DemoNgChipsComponent } from "./demo-ng-chips/demo-ng-chips.component";
+import { DemoNgProgresSpinnersComponent } from "./demo-ng-progresspinners/demo-ng-progresspinners.component";
+import { DemoNgTabsComponent } from "./demo-ng-tabs/demo-ng-tabs.component";
+import { DemoNgDialogsComponent } from "./demo-ng-dialogs/demo-ng-dialogs.component";
 
 @NgModule({
   declarations: [
     DemoNgRadiobuttonComponent,
     DemoNgCheckboxComponent,
-    DemoNgSelectsComponent
+    DemoNgSelectsComponent,
+    DemoNgInputsComponent,
+    DemoNgChipsComponent,
+    DemoNgProgresSpinnersComponent,
+    DemoNgTabsComponent,
+    DemoNgDialogsComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +49,16 @@ import { RouterModule } from "@angular/router";
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
+    MatButtonModule,
+    MatChipsModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatTabsModule,
+    MatTooltipModule,
     RouterModule.forChild([
         {
           path: 'section15',
@@ -43,43 +77,23 @@ import { RouterModule } from "@angular/router";
             },
             {
               path: 'nginputs',
-              component: DemoNgCheckboxComponent
-            },
-            {
-              path: 'ngtextarea',
-              component: DemoNgCheckboxComponent
-            },
-            {
-              path: 'ngdatepicker',
-              component: DemoNgCheckboxComponent
-            },
-            {
-              path: 'ngicons',
-              component: DemoNgCheckboxComponent
-            },
-            {
-              path: 'ngbuttons',
-              component: DemoNgCheckboxComponent
+              component: DemoNgInputsComponent
             },
             {
               path: 'ngchips',
-              component: DemoNgCheckboxComponent
+              component: DemoNgChipsComponent
             },
             {
               path: 'ngprogressspinners',
-              component: DemoNgCheckboxComponent
-            },
-            {
-              path: 'ngtooltips',
-              component: DemoNgCheckboxComponent
+              component: DemoNgProgresSpinnersComponent
             },
             {
               path: 'ngtabs',
-              component: DemoNgCheckboxComponent
+              component: DemoNgTabsComponent
             },
             {
               path: 'ngdialogs',
-              component: DemoNgCheckboxComponent
+              component: DemoNgDialogsComponent
             }
           ]
         }

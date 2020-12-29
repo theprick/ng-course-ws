@@ -1,0 +1,15 @@
+<p>
+  Determinate spinner
+</p>
+<p>
+  <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
+</p>
+<p>
+  Indeterminate spinner
+</p>
+<p>
+  <mat-progress-spinner
+    mode="indeterminate"
+    *ngIf="isLoading"
+  ></mat-progress-spinner>
+</p>
